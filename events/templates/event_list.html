@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event List</title>
+    <style>
+ body{
+    background:#FBD5F1;
+    }
+table{
+    width: 900px;
+    margin-left: 15%;
+    margin-top: 4%;
+    margin-bottom: 8%;
+}
+th, caption{
+    text-align: left;
+}
+table, th, td{
+    border: solid 1px #f75dce;
+    border-collapse: collapse;
+}
+th, td{
+    padding: 10px;
+}
+tr:nth-child(even){
+    background-color:  #FBD5F1; 
+}
+tr:nth-child(odd){
+    background-color:rgb(255, 255, 255);
+}
+
+
+ </style>
+</head>
+<body>
+   <center><h1>Events List</h1></center>
+    <table>   
+        <tr>
+            <th>Event Name</th>
+            <th>Event Duration</th>
+            <th>Event Agenda</th>
+            <th>Event Venue</th>
+            <th>Event Organiser</th>
+            <th>Event Link</th>
+            <th>Event Description</th>
+            <th>Event Date</th>
+
+        </tr>
+        {%for event in events%}
+        <tr>
+            <td>{{event.event_name}}</td>
+            <td>{{event.event_duration}}</td>
+            <td>{{event.event_agenda}}</td>
+            <td>{{event.event_venue}}</td>
+            <td>{{event.event_organiser}}</td>
+            <td>{{event.event_link}}</td>
+            <td>{{event.event_description}}</td>
+            <td>{{event.event_date}}</td>  
+        </tr>
+        {%endfor%}
+    </table>
+    
+</body>
+</html>
